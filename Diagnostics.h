@@ -4,6 +4,9 @@
 class Diagnostics
 {
 	public:
+		void portScan();
+		void ipConfig();
+		void userList();
 	protected:
 };
 

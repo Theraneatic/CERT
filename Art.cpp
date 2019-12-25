@@ -57,7 +57,7 @@ void Art::drawInfo() {
 	cout << "I::::::::In::::n    n::::nf:::::::f         o:::::::::::::::o\n";
 	cout << "I::::::::In::::n    n::::nf:::::::f          oo:::::::::::oo \n";
 	cout << "IIIIIIIIIInnnnnn    nnnnnnfffffffff            ooooooooooo   \n\n";
-	cout << "This program was written by Ghoul to automate common IT tasks.\nVisit the Discord here: https://discord.io/therabots\nVisit the GitHub for this project here: https://github.com/Theraneatic/CEART\n\n";
+	cout << "This program was written by Ghoul to automate common IT tasks.\nVisit the Discord here: https://discord.io/therabots\nVisit the GitHub for this project here: https://github.com/Theraneatic/CERT\n\n";
 	cout << "1: Diagnostics\n";
 	cout << "2: Repair\n";
 	cout << "3: Quit\n\n";

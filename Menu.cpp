@@ -4,11 +4,13 @@
 #include <typeinfo>
 #include "art.h"
 #include <stdlib.h>
+#include "diagnostics.h"
 using namespace std;
 
 void Menu::diagMenu() {
 	Menu menu;
 	Art art;
+	Diagnostics diag;
 	string diagMenuProxy = "";
 	int diagChoice = 0;
 	cin >> diagMenuProxy;
@@ -21,9 +23,9 @@ void Menu::diagMenu() {
 	if (diagChoice == 1) {
 		
 	} else if (diagChoice == 2) {
-		
+		diag.ipConfig();
 	} else if (diagChoice == 3) {
-		
+		diag.userList();
 	} else if (diagChoice == 4) {
 		system("cls");
 		art.drawInfo();
@@ -93,3 +95,19 @@ void Menu::repMenu() {
 		exit(0);
 	}
 }
+
+
+
+
+
+/* 
+Guide on adding new menus to the system.
+
+When adding a new menu, please add the header art and the text options to Art.cpp.
+Then, while here, please create a menu object and an art object. 
+Define the menu name here and init it public in Menu.h
+PLEASE ADD ERROR CHECKING, EXAMPLES ABOVE
+Clear the screen with a system call, then call the art object to draw your menu, then call the menu object for menu functionality. 
+ALWAYS ADD AN EXIT CALL AT THE END
+*/
+
