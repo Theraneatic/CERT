@@ -4,6 +4,8 @@
 class Repair
 {
 	public:
+		void flushDNS();
+        void fixRollback();
 	protected:
 };
 

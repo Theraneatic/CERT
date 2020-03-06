@@ -8,6 +8,54 @@
 #include <string>
 using namespace std;
 
+void Diagnostics::portScan() {
+	Art art;
+	Menu menu;
+	string firstPortProxy, secondPortProxy, writeChoiceProxy, fileNameUnedited, filename, sysCall, confirmProxy;
+	int firstPort = 0, secondPort = 0, writeChoice = 0, portSelectionConfirm = 0;
+	do {
+		cout << "Please enter the port you would like to start the scan at: ";
+		cin >> firstPortProxy;
+		cout << "\n\n";
+		firstPort = atoi(firstPortProxy.c_str());
+		while (firstPort < 1 || firstPort > 65535) {
+			cout << "Please enter a valid input (1-65535): ";
+			cin >> firstPortProxy;
+			firstPort = atoi(firstPortProxy.c_str());
+		}
+		cout << "Please enter the port you would like to end the scan at: ";
+		cin >> secondPortProxy;
+		cout << "\n\n";
+		secondPort = atoi(secondPortProxy.c_str());
+		while (secondPort < 1 || secondPort > 65535) {
+			cout << "Please enter a valid input (1-65535): ";
+			cin >> secondPortProxy;
+			firstPort = atoi(secondPortProxy.c_str());
+		}
+		cout << "Are you happy with the port range?\n1. Yes\n2. No\n\n";
+		cin >> confirmProxy;
+		cout << "\n\n";
+		portSelectionConfirm = atoi(confirmProxy.c_str());
+		while (portSelectionConfirm < 1 || portSelectionConfirm > 2) {
+			cout << "Please enter a valid input: ";
+			cin >> confirmProxy;
+			portSelectionConfirm = atoi(confirmProxy.c_str());
+		}
+		if (portSelectionConfirm == 1) {
+			portSelectionConfirm = 1;
+		} else if (portSelectionConfirm == 2) {
+			portSelectionConfirm = 0;
+		}
+		
+	} while (portSelectionConfirm == 1);
+	portSelectionConfirm = 0;
+	// STOP HERE FOR NOW, BUG BYPASSED CONFIRM
+	system("pause");
+	system("cls");
+	art.drawDiag();
+	menu.diagMenu();
+}
+
 void Diagnostics::ipConfig() {
 	Art art;
 	Menu menu;

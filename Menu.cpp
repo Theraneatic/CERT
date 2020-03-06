@@ -5,6 +5,7 @@
 #include "art.h"
 #include <stdlib.h>
 #include "diagnostics.h"
+#include "repair.h"
 using namespace std;
 
 void Menu::diagMenu() {
@@ -21,7 +22,7 @@ void Menu::diagMenu() {
 		diagChoice = atoi(diagMenuProxy.c_str());
 	}
 	if (diagChoice == 1) {
-		
+		diag.portScan();
 	} else if (diagChoice == 2) {
 		diag.ipConfig();
 	} else if (diagChoice == 3) {
@@ -69,6 +70,7 @@ void Menu::infoMenu() {
 void Menu::repMenu() {
 	Menu menu;
 	Art art;
+	Repair repair;
 	string repMenuProxy = "";
 	int repChoice = 0;
 	cin >> repMenuProxy;
@@ -79,9 +81,9 @@ void Menu::repMenu() {
 		repChoice = atoi(repMenuProxy.c_str());
 	}
 	if (repChoice == 1) {
-		
+		repair.flushDNS();
 	} else if (repChoice == 2) {
-		
+		repair.fixRollback();
 	} else if (repChoice == 3) {
 		system("cls");
 		art.drawDiag();
